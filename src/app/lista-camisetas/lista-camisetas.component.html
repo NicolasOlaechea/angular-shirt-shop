@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Equipo</th>
+            <th>Temporada</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let camiseta of camisetas" [ngClass]="{'oferta': camiseta.oferta}">
+            <td><img [src]="camiseta.imagen" [alt]="camiseta.equipo" width=50 ></td>
+            <td>{{camiseta.equipo}}</td>
+            <td>{{camiseta.temporada}}</td>
+            <td>{{camiseta.precio | currency}}</td>
+            <td> <span class="badge badge-danger" *ngIf="camiseta.stock==0">No hay stock</span></td>
+        </tr>
+    </tbody>
+</table>
