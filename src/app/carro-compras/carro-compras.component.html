@@ -1,0 +1,7 @@
+<h3>Compras</h3>
+
+<ul>
+    <li *ngFor="let camiseta of (listaDelCarro$ | async)">
+        {{camiseta.equipo}}: {{camiseta.cantidad}}
+    </li>
+</ul>
